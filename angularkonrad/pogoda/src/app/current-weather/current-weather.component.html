@@ -1,4 +1,37 @@
-<p>
-  current-weather works!
-  {{data.coord.lat}}
-</p>
+<mat-card>
+  <mat-card-header>
+      <img mat-card-avatar src='http://openweathermap.org/img/wn/{{data.weather[0].icon}}@2x.png' alt="{{data.weather[0].main}}"/>
+      <mat-card-title>{{data.name}} - {{data.weather[0].description}}</mat-card-title>
+      <mat-card-subtitle>latitude: {{data.coord.lat}}, longitude: {{data.coord.lon}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+      <mat-grid-list cols="12" rowHeight="50px">
+        <mat-grid-tile [colspan]=3 [rowspan]=2><img src='/assets/heating.png' class="windimage"/></mat-grid-tile>
+        <mat-grid-tile [colspan]=3>minimal temperature</mat-grid-tile>
+        <mat-grid-tile [colspan]=3>average temperature</mat-grid-tile>
+        <mat-grid-tile [colspan]=3>maximum temperature</mat-grid-tile>
+        <mat-grid-tile [colspan]=3>{{data.main.temp_min}}°C</mat-grid-tile>
+        <mat-grid-tile [colspan]=3>{{data.main.temp}}°C</mat-grid-tile>
+        <mat-grid-tile [colspan]=3>{{data.main.temp_max}}°C</mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="12" rowHeight="50px">
+        <mat-grid-tile [colspan]=3 [rowspan]=2><img src='/assets/windmill.png' class="windimage"/></mat-grid-tile>
+        <mat-grid-tile [colspan]=4>wind speed</mat-grid-tile>
+        <mat-grid-tile [colspan]=5>wind direction</mat-grid-tile>
+        <mat-grid-tile [colspan]=4>{{data.wind.speed}}km/h</mat-grid-tile>
+        <mat-grid-tile [colspan]=5 *ngIf="data.wind.deg>0">{{data.wind.deg}}°</mat-grid-tile>
+        <mat-grid-tile [colspan]=5 *ngIf="!(data.wind.deg>0)">none</mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider></mat-divider>
+      <mat-grid-list cols="12" rowHeight="50px">
+          <mat-grid-tile [colspan]=3 [rowspan]=2><img src='/assets/barometer.png' class="windimage"/></mat-grid-tile>
+        <mat-grid-tile [colspan]=3>pressure</mat-grid-tile>
+        <mat-grid-tile [colspan]=3 [rowspan]=2><img src='/assets/humidity.png' class="windimage"/></mat-grid-tile>
+        <mat-grid-tile [colspan]=3>humidity</mat-grid-tile>
+        <mat-grid-tile [colspan]=3>{{data.main.pressure}}Pa</mat-grid-tile>
+        <mat-grid-tile [colspan]=3>{{data.main.humidity}}%</mat-grid-tile>
+      </mat-grid-list>
+  </mat-card-content>
+</mat-card>

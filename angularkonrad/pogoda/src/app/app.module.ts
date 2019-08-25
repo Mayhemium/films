@@ -11,13 +11,13 @@ import {
   MatButtonModule,
   MatInputModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatGridListModule,
+  MatDividerModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CitySearchComponent } from './city-search/city-search.component';
-import { from } from 'rxjs';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
-import { FivedayWeatherComponent } from './fiveday-weather/fiveday-weather.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -25,8 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     NavBarComponent,
     CitySearchComponent,
-    CurrentWeatherComponent,
-    FivedayWeatherComponent
+    CurrentWeatherComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +39,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

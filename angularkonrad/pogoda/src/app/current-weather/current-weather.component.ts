@@ -19,9 +19,8 @@ export class CurrentWeatherComponent {
       id: 0,
       main: '',
       description: '',
-      icon: ''
+      icon: '01d'
     }],
-    base: '',
     main: {
       temp: 0,
       pressure: 0,
@@ -58,7 +57,7 @@ export class CurrentWeatherComponent {
         weatherService.lat = currentWeather.coord.lat;
         weatherService.lon = currentWeather.coord.lon;
         this.data = currentWeather;
-        console.log(this.data)
+        console.log(this.data);
       }, err => {
         if (err.status === 404) {
           alert('City does not exist!!!');

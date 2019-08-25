@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit {
 
   goToLink( layer: string) {
     window.open('https://openweathermap.org/weathermap?basemap=map&cities=false&layer=' +
-    layer + '&lat=' + this.weatherService.getLat() + '&lon=' + this.weatherService.getLon() + '&zoom=7');
+    layer + '&lat=' + this.weatherService.lat + '&lon=' + this.weatherService.lon + '&zoom=7');
   }
 
 }

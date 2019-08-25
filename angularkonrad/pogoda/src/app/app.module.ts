@@ -18,6 +18,7 @@ import { CitySearchComponent } from './city-search/city-search.component';
 import { from } from 'rxjs';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { FivedayWeatherComponent } from './fiveday-weather/fiveday-weather.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FivedayWeatherComponent } from './fiveday-weather/fiveday-weather.compo
     MatIconModule,
     FormsModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

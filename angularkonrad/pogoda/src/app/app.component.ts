@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pogoda';
 
-  constructor(private weatherService: WeatherService) {
-    weatherService.getCurrentLocation();
+  constructor() {
   }
 }

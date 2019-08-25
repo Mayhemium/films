@@ -1,0 +1,15 @@
+<mat-card class="mat-elevation-z5" @EnterLeave>
+  <mat-form-field class="example-form-field">
+    <input matInput type="text" placeholder="City name" [(ngModel)]="value" [formControl]="cityFormControl">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error *ngIf="cityFormControl.hasError('required')">
+      City is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">CURRENT WEATHER</button>
+    <button mat-raised-button>5-DAY WEATHER</button>
+  </mat-card-actions>
+</mat-card>
